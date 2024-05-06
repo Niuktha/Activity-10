@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Movie</title>
+</head>
+<body>
+    <h1>Update Movie</h1>
+    <form action="{{ url_for('update_movie', id=movie[0]) }}" method="post">
+        <label for="movie_title">Title:</label>
+        <input type="text" id="movie_title" name="movie_title" value="{{ movie[1] }}" required><br>
+        <label for="movie_director">Director:</label>
+        <input type="text" id="movie_director" name="movie_director" value="{{ movie[2] }}" required><br>
+        <label for="movie_genre">Genre:</label>
+        <input type="text" id="movie_genre" name="movie_genre" value="{{ movie[3] }}" required><br>
+        <label for="release_date">Release Date:</label>
+        <input type="text" id="release_date" name="release_date" value="{{ movie[4] }}" required><br>
+        <label for="ticket_price">Ticket Price:</label>
+        <input type="number" id="ticket_price" name="ticket_price" value="{{ movie[5] }}" required><br>
+        <label for="available_seats">Available Seats:</label>
+        <input type="number" id="available_seats" name="available_seats" value="{{ movie[6] }}" required><br>
+        <button type="submit">Update</button>
+    </form>
+    <a href="{{ url_for('movies') }}">Cancel</a>
+</body>
+</html>
